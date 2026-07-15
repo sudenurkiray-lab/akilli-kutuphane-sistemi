@@ -433,9 +433,9 @@ function seedUsers() {
 
 seedUsers();
 seedBooks(db);
-migrateAllBookCopies(db);
 seedBranches(db);
 migrateBranchLinks(db);
+migrateAllBookCopies(db);
 migrateMemberPreferredBranch(db);
 const { seedDemoDeskReservations } = require('./desks');
 const { seedEvents } = require('./events');

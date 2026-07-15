@@ -2903,5 +2903,17 @@ app.delete('/api/discussions/:id', authenticate, (req, res) => {
   res.json(result);
 });
 
+const path = require('path');
+const clientDist = path.join(__dirname, '..', 'client', 'dist');
+app.use(express.static(clientDist));
+app.get('*', (_req, res, next) => {
+  const fs = require('fs');
+  if (fs.existsSync(path.join(clientDist, 'index.html'))) {
+    res.sendFile(path.join(clientDist, 'index.html'));
+  } else {
+    next();
+  }
+});
+
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Dijital Kütüphane API: http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Dijital Kütüphane API: http://localhost:${PORT}`));
