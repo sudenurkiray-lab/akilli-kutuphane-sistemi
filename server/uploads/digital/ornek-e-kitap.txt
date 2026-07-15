@@ -1,0 +1,3 @@
+Akıllı Kütüphane Sistemi — Örnek E-Kitap
+
+Bu dosya demo amaçlıdır.
