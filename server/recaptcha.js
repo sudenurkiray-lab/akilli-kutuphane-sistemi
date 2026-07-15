@@ -1,6 +1,6 @@
 const https = require('https');
 
-const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET || '6LcP4FQtAAAAANwb9zaO0GIk_XuqZJbZ8gvBCWW4';
+const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET || '';
 const RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 
 function verifyRecaptcha(token) {

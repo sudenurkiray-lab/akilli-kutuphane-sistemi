@@ -1,3 +1,4 @@
+require('dotenv').config({ path: require('path').resolve(__dirname, '..', '.env') });
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
@@ -354,7 +355,7 @@ app.get('/api/auth/captcha', (req, res) => {
 });
 
 app.get('/api/auth/recaptcha-key', (_req, res) => {
-  res.json({ siteKey: process.env.RECAPTCHA_SITE_KEY || '6LcP4FQtAAAAAGByd_ns5o4pRFdTmuqqHw3WKs1H' });
+  res.json({ siteKey: process.env.RECAPTCHA_SITE_KEY || '' });
 });
 
 app.get('/api/auth/security-info', (req, res) => {
