@@ -1,144 +1,35 @@
-# Dijital Kütüphane Portalı
+# 🏫 Smart Campus Assistance System
 
-Modern, üç rollü kütüphane yönetim sistemi. Siyah-mor temalı arayüz ile kitap yönetimi, ödünç işlemleri, rezervasyon ve ceza takibi.
+A campus-focused web application designed to help students access university information and services through a structured and user-friendly interface.
 
-## Özellikler
+## 🚀 Features
 
-### Yönetici (Admin)
-- Sistem paneli ve istatistikler
-- Üye yönetimi (ad, soyad, okul no, e-posta, telefon, bölüm, üyelik durumu)
-- Ceza takibi ve ödeme işaretleme
-- Detaylı raporlar
+- Student-oriented campus information system
+- Centralized access to academic and campus services
+- Structured dashboard and navigation
+- User-focused interface design
+- Modular application structure
+- Dynamic content organization
+- Responsive web experience
 
-### Kütüphaneci (Görevli)
-- **Kitap yönetimi** (sadece bu rolde): ad, yazar, kategori, ISBN, yayınevi, basım yılı, raf no, stok, durum
-- Ödünç verme ve iade alma
-- Gecikme kontrolü
-- Raf düzenleme
+## 🛠 Technologies
 
-### Üye (Öğrenci)
-- Kitap arama ve filtreleme
-- Ödünç alma ve rezervasyon
-- Profil: ödünç kitaplar, geçmiş, gecikenler, cezalar, rezervasyonlar
-- Teslim tarihi görüntüleme
+- TypeScript
+- Next.js
+- Web Technologies
+- Modern UI Components
 
-## Kurulum
+## 🏗 Project Structure
 
-```bash
-npm run install:all
-npm run dev
-```
+The application follows a modular structure with dedicated components and pages for campus-related services and student support features.
 
-- Frontend: http://localhost:5173
-- Backend API: http://localhost:3001
+## 🎯 Project Purpose
 
-## Tutulacak Temel Bilgiler
+This project was developed to improve students' access to campus information and digital services while strengthening my experience in TypeScript, web development, interface design, and software architecture.
 
-### Kitap (`books`)
-Kitap adı, yazar, ISBN, kategori, yayınevi, basım yılı, raf numarası, stok adedi, durum
+## 👩‍💻 Developer
 
-### Üye (`users`)
-Ad, soyad, öğrenci numarası, e-posta, telefon, bölüm, şifre (hash), üyelik durumu
+**Sudenur Kıray**  
+Software Engineering Student
 
-### Ödünç (`loans`)
-Kitap, öğrenci, alış tarihi, teslim tarihi, gerçek teslim tarihi, durum
-
-### Ceza (`penalties`)
-Öğrenci, kitap, geciken gün sayısı, ceza tutarı, ödeme durumu
-
-### Rezervasyon (`reservations`)
-Öğrenci, kitap, rezervasyon tarihi, rezervasyon durumu
-
-## Fonksiyonel Olmayan Gereksinimler
-
-| Gereksinim | Uygulama |
-|------------|----------|
-| Kullanımı kolay | Sade menüler, hızlı işlem butonları, sistem kuralları kartı |
-| Güvenli | JWT kimlik doğrulama, rol bazlı yetkilendirme |
-| Yetki kontrolü | Her kullanıcı yalnızca kendi rolünün işlemlerini yapar |
-| Hızlı arama | Veritabanı indeksleri + 300ms debounce arama |
-| Veri düzeni | SQLite: kitap, kullanıcı, ödünç, ceza, rezervasyon tabloları |
-| Modern tasarım | Sade siyah-mor tema, göz yormayan renkler |
-
-## Sistem Kuralları
-
-| Kural | Değer |
-|-------|-------|
-| Maksimum ödünç | 3 kitap / öğrenci |
-| Ödünç süresi | 14 gün |
-| Gecikme cezası | 5 TL / gün |
-| Stok kontrolü | Stok yoksa ödünç alınamaz |
-| Rezervasyon | Kitap ödünçteyken yapılabilir |
-| Admin yetkisi | Tüm işlemleri görür ve yönetir |
-| Öğrenci yetkisi | Yalnızca kendi bilgilerini ve kitaplarını görür |
-
-Kurallar `server/rules.js` dosyasından merkezi olarak yönetilir.
-
-## Fonksiyonel Gereksinimler
-
-| Gereksinim | Durum |
-|------------|-------|
-| Kullanıcı giriş sistemi (Admin, Öğrenci, Kütüphaneci) | ✅ |
-| Kitap ekleme (ad, yazar, ISBN, kategori, yayınevi, yıl, raf, stok) | ✅ |
-| Kitap listeleme ve arama (ad, yazar, kategori, ISBN) | ✅ |
-| Kitap güncelleme ve silme (Admin veya Görevli) | ✅ |
-| Üye yönetimi (kayıt oluşturma, güncelleme) | ✅ |
-| Ödünç alma işlemi | ✅ |
-| Teslim alma işlemi | ✅ |
-| Gecikme cezası (otomatik hesaplama) | ✅ |
-| Rezervasyon sistemi (kitap ödünçteyken) | ✅ |
-| Bildirim sistemi (teslim yaklaşınca / gecikince) | ✅ |
-| Raporlama (popüler kitaplar, gecikenler, aktif üyeler) | ✅ |
-
-## Kullanıcı Gereksinimleri
-
-Sistemde 3 temel kullanıcı tipi bulunur:
-
-### Admin
-Sistemin tamamını yönetir.
-- Üye yönetimi
-- Ceza takibi
-- Sistem raporları
-- Ödünç denetimi (salt okunur)
-
-### Kütüphaneci / Görevli
-Kitap ödünç verme, teslim alma ve stok takibi yapar.
-- Ödünç verme ve iade alma
-- Stok takibi ve kitap yönetimi
-- Gecikme kontrolü
-- Raf düzenleme
-
-### Öğrenci / Üye
-Kitap arar, ödünç alır, rezervasyon yapar, kendi işlemlerini görür.
-- Kitap arama ve filtreleme
-- Ödünç alma
-- Rezervasyon
-- İşlem geçmişi (ödünç, geciken, ceza, rezervasyon)
-
-## Kitap Veritabanı
-
-Sistem **320+ gerçek kitap** içerir; 16 farklı kategoride (Roman, Bilim Kurgu, Tarih, Bilgisayar, Yazılım, Felsefe, Psikoloji, Ekonomi, Polisiye, Fantastik, Bilim, Biyografi, Sosyoloji, Sanat, Eğitim, Mühendislik).
-
-Kitapları yeniden yüklemek için:
-```bash
-npm run seed        # 200'den az kitap varsa ekler
-npm run seed:force  # Tüm kitapları sıfırlayıp yeniden yükler
-```
-
-## Kayıt Olma
-
-`/kayit` sayfasından **Öğrenci**, **Kütüphaneci** veya **Admin** hesabı oluşturabilirsiniz.
-
-## Demo Hesaplar
-
-| Rol | Kullanıcı Adı | Şifre |
-|-----|---------------|-------|
-| Yönetici | admin | admin123 |
-| Kütüphaneci | kutuphaneci | kutup123 |
-| Üye (Öğrenci) | ogrenci1 | ogrenci123 |
-
-## Teknolojiler
-
-- **Frontend:** React, Vite, Tailwind CSS, React Router
-- **Backend:** Node.js, Express, SQLite (better-sqlite3)
-- **Auth:** JWT tabanlı kimlik doğrulama
+GitHub: github.com/sudenurkiray-lab
