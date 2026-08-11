@@ -1,31 +1,39 @@
-# 🏫 Smart Campus Assistance System
+# 📚 Smart Digital Library Management System
 
-A campus-focused web application designed to help students access university information and services through a structured and user-friendly interface.
+A digital library management system designed to simplify book management, borrowing operations, and access to library resources through a modern and user-friendly interface.
 
 ## 🚀 Features
 
-- Student-oriented campus information system
-- Centralized access to academic and campus services
-- Structured dashboard and navigation
-- User-focused interface design
-- Modular application structure
-- Dynamic content organization
-- Responsive web experience
+- Book management and digital catalog
+- Book availability tracking
+- Borrowing and return management
+- User-oriented library interface
+- Search and filtering functionality
+- Organized library resource management
+- Modern and responsive user interface
 
 ## 🛠 Technologies
 
-- TypeScript
-- Next.js
+- JavaScript
 - Web Technologies
 - Modern UI Components
 
 ## 🏗 Project Structure
 
-The application follows a modular structure with dedicated components and pages for campus-related services and student support features.
+The project follows a modular structure designed to separate library operations, user interactions, and interface components for better maintainability and scalability.
 
 ## 🎯 Project Purpose
 
-This project was developed to improve students' access to campus information and digital services while strengthening my experience in TypeScript, web development, interface design, and software architecture.
+This project was developed to create a more efficient digital library experience while strengthening my skills in JavaScript, application development, user interface design, and software architecture.
+
+## 💡 Skills Demonstrated
+
+- Software Development
+- JavaScript Programming
+- UI/UX Design
+- Application Architecture
+- Problem Solving
+- Git & GitHub
 
 ## 👩‍💻 Developer
 
